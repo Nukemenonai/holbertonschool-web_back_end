@@ -21,15 +21,12 @@ class FIFOCache(BaseCaching):
         if not key or not item:
             pass
         else:
+            self.cache_data[key] = item
+            self.cache_order.append(key)
             if len(self.cache_data.values()) > BaseCaching.MAX_ITEMS:
                 del self.cache_data[self.cache_order[0]]
                 print(f"DISCARD: {self.cache_order[0]}")
                 del self.cache_order[0]
-                self.cache_data[key] = item
-                self.cache_order.append(key)
-            else:
-                self.cache_data[key] = item
-                self.cache_order.append(key)
 
     def get(self, key):
         """get an item from cache by key """
