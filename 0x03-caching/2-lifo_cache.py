@@ -3,6 +3,7 @@
 """
 from base_caching import BaseCaching
 
+
 class LIFOCache(BaseCaching):
     """
     caching system that implements LIFO algo
@@ -33,5 +34,3 @@ class LIFOCache(BaseCaching):
             return None
         else:
             return self.cache_data.get(key)
-
-    def move_to_last_place(self, item):
