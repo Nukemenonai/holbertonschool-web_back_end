@@ -40,6 +40,7 @@ class LIFOCache(BaseCaching):
             return self.cache_data.get(key)
 
     def add_to_cache_order(self, key):
+        """add key to cache order if not already in cache order"""
         length = len(self.cache_order)
         if self.cache_order[length - 1] != key:
             self.cache_order.remove(key)
