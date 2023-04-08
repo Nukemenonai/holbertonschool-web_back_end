@@ -16,17 +16,17 @@ class LIFOCache(BaseCaching):
         '''
         Puts an item in the cache
         discards the last item put if the size of the cache
-        > than the max number of items
+        than the max number of items
         '''
         if not key or not item:
-            return 
+            return
         self.cache_data[key] = item
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             if self.cache_order:
                 last = self.cache_order.pop()
                 del self.cache_data[last]
                 print('DISCARD: {}'.format(last))
-        
+
         if key not in self.cache_order:
             self.cache_order.append(key)
         else:
