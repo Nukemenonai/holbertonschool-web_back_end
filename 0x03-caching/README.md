@@ -14,5 +14,5 @@
 * What limits a caching system have
 
 ## files 
-0-basic_cache.py: implements a basic cache with a no limits caching system
-1-fifo_cache.py: implements a basic FIFO cache
+* 0-basic_cache.py: implements a basic cache with a no limits caching system
+* 1-fifo_cache.py: implements a basic FIFO cache
